@@ -1,5 +1,18 @@
+div {
+    position: relative;
+    width: 900px;
+    height: 1200px;
+    overflow: hidden;
+}
+iframe {
+    position: absolute;            
+    width: 900px;
+    height: 1200px;
+    top: -400px;;
+    bottom: 200px;
+}
 * {
-    margin: 0;
+    margin: 0%;
     color: #2c1b8d;
     font-family: 'Trebuchet MS';
 }
@@ -20,7 +33,7 @@ nav {
     font-family:Trebuchet MS', sans-serif;
 }
 .gif {
-    width: 11%;
+    width: 9%;
     background-color: #ffffff;
     padding-bottom: 10px;
 }
@@ -41,7 +54,7 @@ main {
     background-color: #1b90b4;
 }
 img {
-    width: 5%;
+    width: 4%;
     padding-left: 20px;
     background-color: #040e3d;
 }
