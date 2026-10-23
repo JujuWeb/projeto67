@@ -33,16 +33,16 @@ nav {
     font-family:Trebuchet MS', sans-serif;
 }
 .gif {
-    width: 9%;
+    width: 7%;
     background-color: #ffffff;
-    padding-bottom: 10px;
+    padding-bottom: 1%;
 }
 strong{
     font-size: 30px;
     font-family:Courier, monospace;
     color: #153488;
     align-items: center;  
-    background-color: rgb(255, 255, 255); 
+    background-color: #ffffff; 
 }
 main {
     display: flex;
@@ -51,7 +51,7 @@ main {
     flex-direction: column;
     flex: 1;
     color: #ffffff;
-    background-color: #1b90b4;
+    background-color: #74deff;
 }
 img {
     width: 4%;
