@@ -9,9 +9,11 @@
 <body>
     <nav>
         <img src="/static/assets/LogoAnimada.gif" alt="Logo 67GAMES" class="gif">
-        <strong>Aba 1</strong>
-        <strong>Aba 2</strong>
-        <strong>Aba 3</strong>
+        <strong>Jogos gratuitos</strong>
+        <strong>Jogos pagos</strong>
+        <strong>Meus jogos</strong>
+        <strong>Perfil</strong>
+        <strong><a href="{{ url_for('auth.logout') }}">Sair</a></strong>
     </nav>
     <main>
         {% block conteudo %}
@@ -21,7 +23,7 @@
         {% endblock %}
     </main>
     <footer>
-        Todos os direitos reservados &copy 67GAMES 2026
+         &copy; COPYRIGHT 2026 - 67GAMES. TODOS OS DIREITOS RESERVADOS. <img src="/static/assets/67.png" alt="67GAMES">
     </footer>
 </body>
 </html>

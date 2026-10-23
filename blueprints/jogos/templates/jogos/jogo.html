@@ -1,28 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/style.css">
-    <title> 67GAMES </title>
-</head>
-<body>
-    <nav>
-        <img src="/static/assets/LogoAnimada.gif" alt="Logo 67GAMES" class="gif">
-        <strong>Aba 1</strong>
-        <strong>Aba 2</strong>
-        <strong>Aba 3</strong>
-    </nav>
-    <main>
-        Site externo ao meu:
-<div>
-    <iframe src="https://www.clickjogos.com.br/jogos-de-acao/fireboy-and-watergirl-1-in-forest-temple" scrolling="no" frameborder="yes"></iframe>
-</div>
-        aaaaaaaaaaaaaaaa
+{% extends 'base.html' %}
 
-    </main>
-    <footer>
-         &copy; COPYRIGHT 2026 - 67GAMES. TODOS OS DIREITOS RESERVADOS. <img src="/static/assets/67.png" alt="67GAMES">
-    </footer>
-</body>
-</html>
+    {% block titulo %} Jogo - 67GAMES {% endblock %}
+
+    {% block conteudo %}
+
+        <iframe src="https://www.clickjogos.com.br/jogos-de-acao/fireboy-and-watergirl-1-in-forest-temple" scrolling="no" frameborder="yes"></iframe>
+
+    {% endblock %}

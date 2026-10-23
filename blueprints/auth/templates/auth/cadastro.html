@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - 67 Games</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+    {% block titulo %} Cadastro - 67GAMES {% endblock %}
+
+    {% block conteudo %}
+
     <h1>Cadastro</h1>
-    <form action="/cadastro" method="post">
+    <form action="{{ url_for('auth.cadastro') }}" method="post">
         <label for="nome">Nome:</label>
         <input type="text" name="nome" required>
         <br>
@@ -19,5 +17,5 @@
         <br>
         <button type="submit">Cadastrar</button>
     </form>
-</body>
-</html>
+
+    {% endblock %}
