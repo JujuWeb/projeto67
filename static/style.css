@@ -1,14 +1,14 @@
 div {
     position: relative;
-    width: 900px;
-    height: 1200px;
+    width: 700px;
+    height: 1000px;
     overflow: hidden;
 }
 iframe {
     position: absolute;            
-    width: 900px;
-    height: 1200px;
-    top: -400px;;
+    width: 700px;
+    height: 1000px;
+    top: 200px;;
     bottom: 200px;
 }
 * {
@@ -19,7 +19,8 @@ iframe {
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;    
+    min-height: 100vh;
+    margin: 0;  
 }
 nav {
     background-color: #ffffff;
@@ -49,6 +50,7 @@ main {
     flex: 1;
     color: #ffffff;
     background-color: #c1ebff;
+    min-height: 107vh;
 }
 h1 {
     font-size: 50px;
@@ -78,9 +80,9 @@ footer {
     background-color: #040e3d;
     color: white;
     text-align: center;
-    padding: 11px 11px;
-    display: flex; 
+    padding: 11px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    align-content: end;
+    margin-top: auto;;
 }
