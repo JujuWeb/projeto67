@@ -1,23 +1,30 @@
 {% extends 'base.html' %}
+{% block titulo %} Início - 67GAMES {% endblock %}
 
-    {% block titulo %} Início - 67GAMES {% endblock %}
+{% block conteudo %}
+    <h1>Divirta-se, {{ user.nome }}!</h1>
 
-    {% block conteudo %}
-        
-        <h1>Divirta-se, {{ nome }}!</h1>
+    <div class="jogos">
+        {% for jogo in jogos %}
+            <a href="{{ url_for('jogos.jogo', id=jogo.id) }}">
 
-        <div class="jogos">
-        <a href="{{ url_for('jogos.jogo') }}">
-            <img src="static/assets/AguaFogo.jpg" alt="Jogo Água e Fogo" class="jogo">
-        </a>
-        <a href="{{ url_for('jogos.jogo2') }}">
-            <img src="static/assets/Biscoito.png" alt="Jogo do Biscoito" class="jogo">
-        </a>
-        <a href="{{ url_for('jogos.jogo3') }}">
-            <img src="static/assets/PlantaZumbi.webp" alt="Jogo Plantas VS Zumbis" class="jogo">
-        </a>
-        <a href="{{ url_for('jogos.jogo4') }}">
-            <img src="static/assets/Damas.jpg" alt="Jogo Damas" class="jogo">
-        </a>
-        </div>
-    {% endblock %}
+                <p>{{ jogo.nome }}</p>
+                {% if jogo.id == 1 %}
+                    <img src="{{ url_for('static', filename='assets/AguaFogo.jpg') }}" alt="Água e Fogo" class="jogo">
+
+                {% elif jogo.id == 2 %}
+                    <img src="{{ url_for('static', filename='assets/Biscoito.png') }}" alt="Cookie Clicker" class="jogo">
+
+                {% elif jogo.id == 3 %}
+                    <img src="{{ url_for('static', filename='assets/PlantaZumbi.webp') }}" alt="Plants vs. Zombies" class="jogo">
+
+                {% elif jogo.id == 4 %}
+                    <img src="{{ url_for('static', filename='assets/Damas.jpg') }}" alt="Damas" class="jogo">
+                {% endif %}
+
+            </a>
+
+        {% endfor %}
+    </div>
+
+{% endblock %}

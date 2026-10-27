@@ -8,7 +8,9 @@ from models import Usuario
 def cadastro():
     if request.method == "POST":
         nome = request.form["nome"]
-        email = request.form["email"]
+        email = request.form["email"].strip().lower()
+        if Usuario.query.filter(Usuario.email == email).first():
+            return render_template("auth/cadastro.html", erro="este email já foi cadastrado")
         senha = generate_password_hash(request.form["senha"])
         user = Usuario(nome=nome, email=email, senha=senha)
         db.session.add(user)
@@ -19,7 +21,7 @@ def cadastro():
 @auth_bp.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        email = request.form["email"]
+        email = request.form["email"].strip().lower()
         senha = request.form["senha"]
         user = Usuario.query.filter_by(email=email).first()
         if user and check_password_hash(user.senha, senha):
@@ -30,4 +32,4 @@ def login():
 @auth_bp.route("/logout")
 def logout():
     session.pop("user_id", None)
-    return redirect(url_for("auth.login"))
+    return redirect(url_for("auth.cadastro"))

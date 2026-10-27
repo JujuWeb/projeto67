@@ -1,23 +1,16 @@
+from operator import index
+from models import Usuario, Jogo
 from flask import render_template, request, redirect, url_for, session
 from blueprints.jogos import jogos_bp
+from banco import db
 
 @jogos_bp.route("/inicio", methods=["GET", "POST"])
 def inicio():
-    nome = session.get("nome")
-    return render_template("jogos/inicio.html", nome=nome)
+    user = Usuario.query.get(session["user_id"])
+    jogos = Jogo.query.all()
+    return render_template("jogos/inicio.html", user=user, jogos=jogos)
 
-@jogos_bp.route("/jogo")
-def jogo():
-    return render_template("jogos/jogo.html")
-
-@jogos_bp.route("/jogo2")
-def jogo2():
-    return render_template("jogos/jogo2.html")
-
-@jogos_bp.route("/jogo3")
-def jogo3():
-    return render_template("jogos/jogo3.html")
-
-@jogos_bp.route("/jogo4")
-def jogo4():
-    return render_template("jogos/jogo4.html")
+@jogos_bp.route("/jogo/<int:id>", methods=["GET", "POST"])
+def jogo(id):
+    jogo = Jogo.query.get(id)
+    return render_template("jogos/jogo.html", jogo=jogo)

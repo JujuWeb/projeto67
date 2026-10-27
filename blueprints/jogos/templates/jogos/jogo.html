@@ -1,9 +1,26 @@
 {% extends 'base.html' %}
+{% block titulo %} {{ jogo.nome }} - 67GAMES {% endblock %}
 
-    {% block titulo %} Jogo - 67GAMES {% endblock %}
+{% block conteudo %}
 
-    {% block conteudo %}
+    <div class="detalhes-jogo">
+        <h1>{{ jogo.nome }}</h1>
+        <p><strong>Descrição:</strong> {{ jogo.descricao }}</p>
+        <p><strong>Ano de lançamento:</strong> {{ jogo.ano_lancamento or 'Desconhecido' }}</p>
+        <p><strong>Criador:</strong> {{ jogo.criador.nome }}</p>
+        <p><strong>Categoria:</strong> {{ jogo.categoria.nome }}</p>
 
-        <iframe src="https://www.clickjogos.com.br/jogos-de-acao/fireboy-and-watergirl-1-in-forest-temple" scrolling="no" frameborder="yes"></iframe>
+        {% if jogo.id == 1 %}
+            <iframe src="https://www.clickjogos.com.br/jogos-de-acao/fireboy-and-watergirl-1-in-forest-temple"></iframe>
+        {% elif jogo.id == 2 %}
+            <iframe src="https://quackprep.org/class/cookie-clicker"></iframe>
+        {% elif jogo.id == 3 %}
+            <iframe src="https://www.crazygames.com/game/plants-vs-zombies"></iframe>
+        {% elif jogo.id == 4 %}
+            <iframe src="https://www.crazygames.com/game/checkers-2"></iframe>
+        {% else %}
+            <p>jogo não encontrado</p>
+        {% endif %}
+    </div>
 
-    {% endblock %}
+{% endblock %}
