@@ -4,6 +4,16 @@
 {% block conteudo %}
     <h1>Divirta-se, {{ user.nome }}!</h1>
 
+    <div class="filtros">
+        <a href="{{ url_for('jogos.inicio') }}">Todos</a>
+
+        {% for categoria in categorias %}
+            <a href="{{ url_for('jogos.inicio', categoria=categoria.id) }}">
+                {{ categoria.nome }}
+            </a>
+        {% endfor %}
+    </div>
+
     <div class="jogos">
         {% for jogo in jogos %}
             <a href="{{ url_for('jogos.jogo', id=jogo.id) }}">

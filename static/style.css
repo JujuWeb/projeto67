@@ -113,6 +113,25 @@ iframe {
     border: none;
     margin: 20px auto;
 }
+.filtros {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.filtros a {
+    background-color: #153488;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.filtros a:hover {
+    background-color: #005fad;
+    transform: scale(1.05);
+}
 .logofooter {
     width: 3%;
     padding-left: 10px;
