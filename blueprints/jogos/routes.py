@@ -3,7 +3,8 @@ from blueprints.jogos import jogos_bp
 
 @jogos_bp.route("/inicio", methods=["GET", "POST"])
 def inicio():
-    return render_template("jogos/inicio.html")
+    nome = session.get("nome")
+    return render_template("jogos/inicio.html", nome=nome)
 
 @jogos_bp.route("/jogo")
 def jogo():
@@ -12,3 +13,11 @@ def jogo():
 @jogos_bp.route("/jogo2")
 def jogo2():
     return render_template("jogos/jogo2.html")
+
+@jogos_bp.route("/jogo3")
+def jogo3():
+    return render_template("jogos/jogo3.html")
+
+@jogos_bp.route("/jogo4")
+def jogo4():
+    return render_template("jogos/jogo4.html")

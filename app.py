@@ -2,7 +2,6 @@ from flask import Flask
 from blueprints.auth import auth_bp
 from blueprints.jogos import jogos_bp
 from banco import db
-from models import Usuario
 
 app = Flask(__name__)
 app.secret_key = "batata"

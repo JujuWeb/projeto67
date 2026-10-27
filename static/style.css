@@ -1,20 +1,8 @@
-div {
-    position: relative;
-    width: 700px;
-    height: 1000px;
-    overflow: hidden;
-}
-iframe {
-    position: absolute;            
-    width: 700px;
-    height: 1000px;
-    top: 200px;;
-    bottom: 200px;
-}
 * {
     margin: 0%;
     color: #153488;
     font-family: 'Trebuchet MS';
+    box-sizing: border-box;
 }
 body {
     display: flex;
@@ -25,7 +13,6 @@ body {
 nav {
     background-color: #ffffff;
     padding: 10px;
-    margin-bottom: 10px;
     display: flex;
     justify-content:space-around;
     gap: 50px;
@@ -51,12 +38,13 @@ main {
     color: #ffffff;
     background-color: #c1ebff;
     min-height: 107vh;
+    width: 100%;
 }
 h1 {
     font-size: 50px;
     color: #153488;
     text-align: center;
-    margin-bottom: 20px;
+    margin: 50px;
 }
 form {
     display: flex;
@@ -71,7 +59,34 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
-img {
+.jogos {
+    display: flex;     
+    flex-wrap: wrap;  
+    gap: 20px;            
+    justify-content: center;    
+    width: 100%;         
+    max-width: 1200px;   
+    padding: 20px;
+}
+.jogo {
+    width: 100%;          
+    height: 200px;        
+    object-fit: cover;    
+    border-radius: 8px;     
+    transition: transform 0.2s; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.jogo:hover {
+    transform: scale(1.05);
+}
+iframe {
+    position: absolute;            
+    width: 700px;
+    height: 1000px;
+    top: 200px;
+    bottom: 200px;
+}
+.logofooter {
     width: 3%;
     padding-left: 10px;
     background-color: #040e3d;
@@ -84,5 +99,5 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: auto;;
+    margin-top: auto;
 }

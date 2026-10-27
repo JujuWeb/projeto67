@@ -4,9 +4,20 @@
 
     {% block conteudo %}
         
-        <h1>Bem-vindo à Página Inicial!</h1>
-        <p>Este texto vai aparecer dentro da tag do seu base.html.</p>
-        <a href="{{url_for('jogos.jogo')}}">Agua e Fogo</a>
-        <a href="{{url_for('jogos.jogo2')}}">biscoito</a>
+        <h1>Divirta-se, {{ nome }}!</h1>
 
+        <div class="jogos">
+        <a href="{{ url_for('jogos.jogo') }}">
+            <img src="static/assets/AguaFogo.jpg" alt="Jogo Água e Fogo" class="jogo">
+        </a>
+        <a href="{{ url_for('jogos.jogo2') }}">
+            <img src="static/assets/Biscoito.png" alt="Jogo do Biscoito" class="jogo">
+        </a>
+        <a href="{{ url_for('jogos.jogo3') }}">
+            <img src="static/assets/PlantaZumbi.webp" alt="Jogo Plantas VS Zumbis" class="jogo">
+        </a>
+        <a href="{{ url_for('jogos.jogo4') }}">
+            <img src="static/assets/Damas.jpg" alt="Jogo Damas" class="jogo">
+        </a>
+        </div>
     {% endblock %}
