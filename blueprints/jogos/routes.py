@@ -8,3 +8,7 @@ def inicio():
 @jogos_bp.route("/jogo")
 def jogo():
     return render_template("jogos/jogo.html")
+
+@jogos_bp.route("/jogo2")
+def jogo2():
+    return render_template("jogos/jogo2.html")
