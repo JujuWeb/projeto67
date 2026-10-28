@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block titulo %}Cadastrar jogo - 67GAMES{% endblock %}
+{% block conteudo %}
+<main class="formulario-jogo">
+    <h1>Cadastrar jogo</h1>
+    <p>adicione um novo jogo ao catálogo do 67GAMES</p>
+
+    {% if erro %}
+        <p class="mensagem-erro">{{ erro }}</p>
+    {% endif %}
+
+    <form method="POST" class="form-criar-jogo">
+        <label for="nome">Nome do jogo</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="descricao">Descrição</label>
+        <textarea id="descricao" name="descricao" rows="4"></textarea>
+
+        <label for="ano_lancamento">Ano de lançamento</label>
+        <input type="number" id="ano_lancamento" name="ano_lancamento" min="1">
+
+        <label>Categoria *</label>
+            <div class="opcoes-categoria">
+                {% for categoria in categorias %}
+                    <label class="opcao-categoria">
+                        <input type="radio" name="categoria_id" value="{{ categoria.id }}" required>
+                        <span>{{ categoria.nome }}</span>
+                    </label>
+                {% endfor %}
+            </div>
+
+            <label for="criador_id">Criador existente</label>
+            <select id="criador_id" name="criador_id">
+                <option value="">Cadastrar um novo criador</option>
+                {% for criador in criadores %}
+                    <option value="{{ criador.id }}">{{ criador.nome }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="novo_criador">Ou nome do novo criador</label>
+            <input type="text" id="novo_criador" name="novo_criador" placeholder="digite o nome do criador">
+
+        <label for="imagem_url">URL da imagem</label>
+        <input type="url" id="imagem_url" name="imagem_url" placeholder="https://exemplo.com/imagem.jpg">
+        <small>opcional, se a imagem não carregar, usaremos a padrão</small>
+
+        <label for="url_jogo">URL para jogar</label>
+        <input type="url" id="url_jogo" name="url_jogo" placeholder="https://exemplo.com/jogo">
+        <small>opcional, se não informar, será exibido uma url padrão</small>
+
+        <button type="submit" class="botao-cadastrar">
+            Cadastrar jogo
+        </button>
+    </form>
+</main>
+{% endblock %}

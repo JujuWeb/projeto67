@@ -53,8 +53,14 @@ h1 {
 }
 form {
     display: flex;
-    flex-direction: row;
     gap: 10px;
+}
+.form-criar-jogo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: min(90%, 600px);
+    margin: 24px auto;
 }
 button {
     background-color: #005fad;
@@ -92,6 +98,15 @@ iframe {
     display: block;
     margin: 30px auto;
 }
+.card-jogo {
+    position: relative;
+}
+
+.card-jogo img,
+.imagem-detalhe {
+    max-width: 100%;
+    object-fit: cover;
+}
 .detalhes-jogo {
     display: flex;
     background-color: #c1ebff;
@@ -106,12 +121,13 @@ iframe {
     background-color: #c1ebff;
     text-align: center;
 }
-.detalhes-jogo iframe {
-    width: 700px;
-    max-width: 100%;
+.area-jogo iframe {
+    display: block;
+    width: 1000px;
     height: 600px;
     border: none;
-    margin: 20px auto;
+    border-radius: 12px;
+    background-color: white;
 }
 .filtros {
     display: flex;
@@ -119,6 +135,18 @@ iframe {
     flex-wrap: wrap;
     gap: 15px;
     margin-bottom: 20px;
+}
+nav .link-cadastrar {
+    background-color: #ffffff;
+    color: #153488;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+nav .link-cadastrar:hover {
+    background-color: #eaf5ff;
+    color: #005fad;
 }
 .filtros a {
     background-color: #153488;
@@ -136,6 +164,126 @@ iframe {
     width: 3%;
     padding-left: 10px;
     background-color: #040e3d;
+}
+.botao-favorito {
+    background: transparent;
+    border: none;
+    color: #153488;
+    font-size: 28px;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.2s;
+}
+.botao-favorito:hover {
+    transform: scale(1.2);
+    color: #e04464;
+}
+.botao-favorito.favoritado {
+    color: #e04464;
+}
+.opcoes-categoria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 8px 0 16px;
+}
+.opcao-categoria {
+    cursor: pointer;
+}
+.opcao-categoria input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.opcao-categoria span {
+    display: inline-block;
+    padding: 10px 16px;
+    border: 2px solid #c7cde0;
+    border-radius: 20px;
+    color: #153488;
+    background: white;
+    transition: 0.2s;
+}
+.opcao-categoria input:checked + span {
+    background: #153488;
+    border-color: #153488;
+    color: white;
+}
+.opcao-categoria input:focus-visible + span {
+    outline: 2px solid #5275d9;
+    outline-offset: 3px;
+}
+.card-jogo {
+    position: relative;
+    width: 250px;
+    padding: 12px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.card-jogo a {
+    text-decoration: none;
+}
+.card-jogo p {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.card-jogo img {
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.card-jogo form {
+    justify-content: flex-end;
+    margin-top: 8px;
+}
+.formulario-jogo {
+    width: 100%;
+    padding: 30px 15px;
+}
+.formulario-jogo h1 {
+    margin: 20px 0;
+}
+.acoes-inicio {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 0 25px;
+}
+.filtros {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0 15px 25px;
+}
+.form-criar-jogo label {
+    font-weight: bold;
+    margin-top: 8px;
+}
+.form-criar-jogo input:not([type="radio"]), .form-criar-jogo textarea, .form-criar-jogo select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #c7cde0;
+    border-radius: 8px;
+    font: inherit;
+    background-color: white;
+}
+.form-criar-jogo small {
+    color: #666;
+    font-size: 13px;
+}
+.botao-cadastrar {
+    display: inline-block;
+    padding: 12px 18px;
+    background-color: #153488;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
 }
 footer {
     background-color: #040e3d;

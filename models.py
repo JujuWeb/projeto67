@@ -1,5 +1,11 @@
 from banco import db
 
+usuario_jogo = db.Table(
+    "usuario_jogo",
+    db.Column("usuario_id", db.Integer, db.ForeignKey("usuario.id"), primary_key=True),
+    db.Column("jogo_id", db.Integer, db.ForeignKey("jogo.id"), primary_key=True)
+)
+
 class Usuario(db.Model):
     __tablename__ = "usuario"
 
@@ -7,6 +13,7 @@ class Usuario(db.Model):
     nome = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(120), nullable=False)
     senha = db.Column(db.String(255), nullable=False)
+    jogos_favoritos = db.relationship("Jogo", secondary=usuario_jogo, back_populates="usuarios_favoritaram")
 
 class Jogo(db.Model):
     __tablename__ = "jogo"
@@ -19,6 +26,9 @@ class Jogo(db.Model):
     categoria_id = db.Column(db.Integer, db.ForeignKey("categoria.id"), nullable=False)
     criador = db.relationship("Criador", backref=db.backref("jogos", lazy=True))
     categoria = db.relationship("Categoria", backref=db.backref("jogos", lazy=True))
+    imagem_url = db.Column(db.String(500), nullable=True)
+    url_jogo = db.Column(db.String(500), nullable=True)
+    usuarios_favoritaram = db.relationship("Usuario", secondary=usuario_jogo, back_populates="jogos_favoritos")
 
 class Criador(db.Model):
     __tablename__ = "criador"
@@ -50,34 +60,42 @@ jogos = [
     {
         "id": 1,
         "nome": "Água e Fogo",
-        "descricao": "jogo de plataforma onde dois personagens resolvem desafios usando suas habilidades elementais",
+        "descricao": "Jogo de plataforma com dois personagens e habilidades elementais.",
         "ano_lancamento": 2009,
         "criador_id": 1,
         "categoria_id": 1,
+        "imagem_url": "/static/assets/AguaFogo.jpg",
+        "url_jogo": "https://www.clickjogos.com.br/jogos-de-acao/fireboy-and-watergirl-1-in-forest-temple",
     },
     {
         "id": 2,
         "nome": "Cookie Clicker",
-        "descricao": "jogo incremental onde o jogador produz cookies ao clicar e compra melhorias para aumentar a produção",
+        "descricao": "Jogo incremental em que o jogador produz cookies e compra melhorias.",
         "ano_lancamento": 2013,
         "criador_id": 2,
         "categoria_id": 2,
+        "imagem_url": "/static/assets/Biscoito.png",
+        "url_jogo": "https://quackprep.org/class/cookie-clicker",
     },
     {
         "id": 3,
         "nome": "Plants vs. Zombies",
-        "descricao": "jogo de estratégia e defesa de torres onde plantas são usadas para proteger a casa contra zumbis",
+        "descricao": "Jogo de estratégia em que plantas defendem a casa contra zumbis.",
         "ano_lancamento": 2009,
         "criador_id": 3,
         "categoria_id": 3,
+        "imagem_url": "/static/assets/PlantaZumbi.webp",
+        "url_jogo": "https://www.crazygames.com/game/plants-vs-zombies",
     },
     {
         "id": 4,
         "nome": "Damas",
-        "descricao": "jogo de tabuleiro para dois jogadores, com o objetivo de capturar as peças do adversário",
+        "descricao": "Jogo de tabuleiro para dois jogadores.",
         "ano_lancamento": None,
         "criador_id": 4,
         "categoria_id": 4,
+        "imagem_url": "/static/assets/Damas.jpg",
+        "url_jogo": "https://www.crazygames.com/game/checkers-2",
     },
 ]
 
