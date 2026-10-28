@@ -31,7 +31,7 @@ Data: 26/10/2026
 - Próximo passo: Cadastrar os dados iniciais de jogos, criadores e categorias e implementar as rotas necessárias para exibir os jogos.
 
 Data: 27/10/2026
-- O que foi feito: Foram realizadas alterações nas rotas, implementada a exibição de jogos na aplicação e adicionados novos jogos ao catálogo, além de um filtro para permitir a busca de jogos por categoria
-- Dificuldade encontrada: Integrar os registros do banco de dados às páginas HTML, corrigir problemas na estrutura dos dados e permitir que os jogos fossem acessados individualmente
-- Como resolvi: Foi ajustadas as rotas do flask, corrigidos os dados cadastrados e implementada a consulta dos jogos por categoria
-- Próximo passo: Implementar o CRUD para permitir cadastrar, visualizar, editar e excluir jogos, além de revisar o funcionamento geral da aplicação.
+- O que foi feito: Foram realizadas alterações nas rotas, implementada a exibição de jogos na aplicação e adicionados novos jogos ao catálogo, além de um filtro para permitir a busca de jogos por categoria. Também foi feito cadastro de jogos e relacionamentos.
+- Dificuldade encontrada: Integrar os registros do banco de dados às páginas HTML, corrigir problemas na estrutura dos dados e permitir que os jogos fossem acessados individualmente, além de integrar o CRUD num jogo com imagens e links.
+- Como resolvi: Foi ajustadas as rotas do flask, corrigidos os dados cadastrados e implementada a consulta dos jogos por categoria. O CRUD foi uma grande criação de templates e rotas, mas o cadastro funcionou e a opção de favoritar também
+- Próximo passo: Implementar o CRUD para permitir editar e excluir jogos, além de revisar o funcionamento geral da aplicação.
