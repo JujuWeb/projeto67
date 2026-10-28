@@ -4,18 +4,6 @@
 
 <h1>Divirta-se, {{ user.nome }}!</h1>
 
-<div class="acoes-inicio">
-    <a href="{{ url_for('jogos.criar_jogo') }}" class="botao-cadastrar">Cadastrar jogo</a>
-</div>
-
-<div class="filtros">
-    <a href="{{ url_for('jogos.inicio') }}">Todos</a>
-
-    {% for categoria in categorias %}
-        <a href="{{ url_for('jogos.inicio', categoria=categoria.id) }}">{{ categoria.nome }}</a>
-    {% endfor %}
-</div>
-
 <div class="jogos">
     {% for jogo in jogos %}
         <div class="card-jogo">

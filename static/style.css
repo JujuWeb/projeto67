@@ -9,8 +9,10 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;  
+    color: #153488;
+    background-image: url("assets/fundo.png");
 }
-nav {
+header {
     background-color: #ffffff;
     padding: 10px;
     display: flex;
@@ -23,7 +25,7 @@ nav {
     background-color: #ffffff;
     padding-bottom: 1%;
 }
-nav strong {
+header strong {
     font-size: 30px;
     color: #153488;
     align-items: center;
@@ -34,16 +36,31 @@ strong {
     color: #153488;
     align-items: center;
 }
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #153488;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
 main {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    flex: 1;
     color: #ffffff;
-    background-color: #c1ebff;
+    background-image: url(".../assets/fundo.png");
+    background-size: cover;
     min-height: 107vh;
     width: 100%;
+}
+.bloco {
+    background-color: #e8f8ff;
+    padding: 40px 250px;
+    flex: 1;         
+    width: min(850px);
+    margin: 0 auto;
 }
 h1 {
     font-size: 50px;
@@ -53,7 +70,14 @@ h1 {
 }
 form {
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+    gap: 5px;
+}
+input {
+    text-align: left;
+    width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
 }
 .form-criar-jogo {
     display: flex;
@@ -66,9 +90,16 @@ button {
     background-color: #005fad;
     color: white;
     border: none;
-    padding: 10px 20px;
+    margin-top: 8px;
+    padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
+}
+p {
+    font-size: 15px;
+    color: #153488;
+    margin-top: 8px;
+    text-align: center;
 }
 .jogos {
     display: flex;     
@@ -134,9 +165,8 @@ iframe {
     justify-content: center;
     flex-wrap: wrap;
     gap: 15px;
-    margin-bottom: 20px;
 }
-nav .link-cadastrar {
+header .link-cadastrar {
     background-color: #ffffff;
     color: #153488;
     padding: 10px 20px;
@@ -144,7 +174,7 @@ nav .link-cadastrar {
     text-decoration: none;
     transition: 0.2s;
 }
-nav .link-cadastrar:hover {
+header .link-cadastrar:hover {
     background-color: #eaf5ff;
     color: #005fad;
 }
@@ -161,7 +191,7 @@ nav .link-cadastrar:hover {
     transform: scale(1.05);
 }
 .logofooter {
-    width: 3%;
+    width: 5%;
     padding-left: 10px;
     background-color: #040e3d;
 }

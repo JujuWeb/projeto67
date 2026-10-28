@@ -7,20 +7,38 @@
    <title> {% block titulo %} 67GAMES {% endblock %} </title>
 </head>
 <body>
-    <nav>
+
+    <header>
         <img src="/static/assets/LogoAnimada.gif" alt="Logo 67GAMES" class="gif">
-        <strong><a href="{{ url_for('jogos.criar_jogo') }}" class="link-cadastrar">Cadastrar jogo</a></strong>
-        <strong>Jogos pagos</strong>
-        <strong>Jogos de dois</strong>
+        <strong>
+            <a href="{{ url_for('jogos.criar_jogo') }}" class="link-cadastrar">Cadastrar jogo</a>
+        </strong>
+        <strong>Jogos Favoritos</strong>
         <strong>Perfil</strong>
-        <strong><a href="{{ url_for('auth.logout') }}">Sair</a></strong>
+        <strong>
+            <a href="{{ url_for('auth.logout') }}">Sair</a>
+        </strong>
+    </header>
+
+    <nav>
+
+    <div class="filtros">
+        <a href="{{ url_for('jogos.inicio') }}">Todos</a>
+
+        {% for categoria in categorias %}
+            <a href="{{ url_for('jogos.inicio', categoria=categoria.id) }}">{{ categoria.nome }}</a>
+        {% endfor %}
+    </div>
     </nav>
+
     <main>
+        <div class="bloco">
         {% block conteudo %}
 
          67GAMES 
 
         {% endblock %}
+        </div>
     </main>
     <footer>
          &copy; COPYRIGHT 2026 - 67GAMES. TODOS OS DIREITOS RESERVADOS. <img src="/static/assets/67.png" alt="67GAMES" class="logofooter">

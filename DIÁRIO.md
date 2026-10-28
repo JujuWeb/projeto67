@@ -35,3 +35,21 @@ Data: 27/10/2026
 - Dificuldade encontrada: Integrar os registros do banco de dados às páginas HTML, corrigir problemas na estrutura dos dados e permitir que os jogos fossem acessados individualmente, além de integrar o CRUD num jogo com imagens e links.
 - Como resolvi: Foi ajustadas as rotas do flask, corrigidos os dados cadastrados e implementada a consulta dos jogos por categoria. O CRUD foi uma grande criação de templates e rotas, mas o cadastro funcionou e a opção de favoritar também
 - Próximo passo: Implementar o CRUD para permitir editar e excluir jogos, além de revisar o funcionamento geral da aplicação.
+
+Data: 28/10/2026
+- O que foi feito: O CSS teve melhoria e se adaptou mais aos estilos de site de jogos.
+- Dificuldade encontrada: Colocar um bloco que separassse o conteudo da imagem de fundo.
+- Como resolvi: Criei uma div para todo o conteúdo do site por cima da imagem de fundo.
+- Próximo passo: Redirecionar as outras páginas.
+
+Data: 29/10/2026
+- O que foi feito: 
+- Dificuldade encontrada: 
+- Como resolvi: 
+- Próximo passo:
+
+Data: 30/10/2026
+- O que foi feito: 
+- Dificuldade encontrada: 
+- Como resolvi: 
+- Próximo passo:
