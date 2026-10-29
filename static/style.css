@@ -9,7 +9,6 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;  
-    color: #153488;
     background-image: url("assets/fundo.png");
 }
 header {
@@ -31,10 +30,9 @@ header strong {
     align-items: center;
     background-color: #ffffff;
 }
-strong {
-    font-size: 30px;
-    color: #153488;
-    align-items: center;
+.icon{
+    width: 5%;
+    padding-bottom: 1%;  
 }
 nav {
     display: flex;
@@ -57,13 +55,13 @@ main {
 }
 .bloco {
     background-color: #e8f8ff;
-    padding: 40px 250px;
+    padding: 50px 50px;
     flex: 1;         
-    width: min(850px);
+    width: min(1000px);
     margin: 0 auto;
 }
 h1 {
-    font-size: 50px;
+    font-size: 60px;
     color: #153488;
     text-align: center;
     margin: 50px;
@@ -165,23 +163,12 @@ iframe {
     justify-content: center;
     flex-wrap: wrap;
     gap: 15px;
-}
-header .link-cadastrar {
-    background-color: #ffffff;
-    color: #153488;
-    padding: 10px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: 0.2s;
-}
-header .link-cadastrar:hover {
-    background-color: #eaf5ff;
-    color: #005fad;
+
 }
 .filtros a {
     background-color: #153488;
-    color: white;
     padding: 10px 20px;
+    color: #ffffff;    
     border-radius: 8px;
     text-decoration: none;
     transition: 0.2s;
@@ -193,7 +180,7 @@ header .link-cadastrar:hover {
 .logofooter {
     width: 5%;
     padding-left: 10px;
-    background-color: #040e3d;
+    background-color: #153488;
 }
 .botao-favorito {
     background: transparent;
@@ -316,7 +303,7 @@ header .link-cadastrar:hover {
     cursor: pointer;
 }
 footer {
-    background-color: #040e3d;
+    background-color: #153488;
     color: white;
     text-align: center;
     padding: 11px;

@@ -10,14 +10,22 @@
 
     <header>
         <img src="/static/assets/LogoAnimada.gif" alt="Logo 67GAMES" class="gif">
-        <strong>
-            <a href="{{ url_for('jogos.criar_jogo') }}" class="link-cadastrar">Cadastrar jogo</a>
-        </strong>
-        <strong>Jogos Favoritos</strong>
-        <strong>Perfil</strong>
-        <strong>
-            <a href="{{ url_for('auth.logout') }}">Sair</a>
-        </strong>
+
+        <a href="">
+            <img src="static/assets/favoritos.png" alt="Jogos favoritos" class="icon">
+        </a>
+
+        <a href="{{ url_for('jogos.criar_jogo') }}">
+            <img src="static/assets/cadastrarjogo.png" alt="Cadastrar Jogo" class="icon">
+        </a>
+
+        <a href="">
+            <img src="static/assets/perfil.png" alt="Perfil" class="icon">
+        </a>
+        
+        <a href="{{ url_for('auth.logout') }}">
+            <img src="static/assets/sair.png" alt="Sair" class="icon">
+        </a>
     </header>
 
     <nav>
