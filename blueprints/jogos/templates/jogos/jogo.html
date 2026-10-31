@@ -1,15 +1,9 @@
 {% extends 'base.html' %}
 {% block titulo %}{{ jogo.nome }} - 67GAMES{% endblock %}
+
 {% block conteudo %}
 
-<div class="detalhes-jogo">
-    <h1>{{ jogo.nome }}</h1>
-    <div class="informacoes-jogo">
-        <p><strong>Descrição:</strong> {{ jogo.descricao or 'Sem descrição disponível.' }}</p>
-        <p><strong>Ano de lançamento:</strong> {{ jogo.ano_lancamento or 'Desconhecido' }}</p>
-        <p><strong>Criador:</strong> {{ jogo.criador.nome }}</p>
-        <p><strong>Categoria:</strong> {{ jogo.categoria.nome }}</p>
-    </div>
+    <h1>Jogo {{ jogo.nome }}</h1>
 
     {% if jogo.url_jogo %}
         <div class="area-jogo">
@@ -24,6 +18,12 @@
         <p class="aviso-jogo">este jogo ainda não possui um endereço para jogar</p>
     {% endif %}
 
+        <div class="informacoes-jogo">
+        <p><strong>Descrição:</strong> {{ jogo.descricao or 'Sem descrição disponível.' }}</p>
+        <p><strong>Ano de lançamento:</strong> {{ jogo.ano_lancamento or 'Desconhecido' }}</p>
+        <p><strong>Criador:</strong> {{ jogo.criador.nome }}</p>
+        <p><strong>Categoria:</strong> {{ jogo.categoria.nome }}</p>
+    </div>
     <a href="{{ url_for('jogos.inicio') }}" class="botao-voltar">Voltar ao catálogo</a>
-</div>
+
 {% endblock %}

@@ -1,3 +1,4 @@
+/* configuraçoes gerais */
 * {
     margin: 0%;
     color: #153488;
@@ -5,100 +6,111 @@
     box-sizing: border-box;
 }
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;  
+    min-height: 100vh;  
     background-image: url("assets/fundo.png");
 }
+/* cabeçalho */
 header {
     background-color: #ffffff;
-    padding: 10px;
+    padding: 5px;
+    padding-left: 50px;
+    padding-right: 50px;
     display: flex;
-    justify-content:space-around;
-    gap: 50px;
-    align-items: center; 
+    align-items: center;
+    justify-content: space-between;
 }
 .gif {
-    width: 7%;
+    width: 105px;
     background-color: #ffffff;
-    padding-bottom: 1%;
-}
-header strong {
-    font-size: 30px;
-    color: #153488;
-    align-items: center;
-    background-color: #ffffff;
+    padding-bottom: 10px;
 }
 .icon{
-    width: 5%;
-    padding-bottom: 1%;  
+    width: 40px;
 }
+/* nav */
 nav {
     display: flex;
     justify-content: space-around;
     background-color: #153488;
     align-items: center;
     gap: 20px;
-    padding: 10px;
+    padding: 5px;
 }
+.filtros {
+    background-color: #153488;
+    padding: 10px 20px;
+    color: #ffffff;    
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.filtros:hover {
+    background-color: #005fad;
+    transform: scale(1.05);
+}
+/* conteúdo geral*/
 main {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     color: #ffffff;
-    background-image: url(".../assets/fundo.png");
-    background-size: cover;
-    min-height: 107vh;
-    width: 100%;
 }
 .bloco {
     background-color: #e8f8ff;
-    padding: 50px 50px;
+    padding: 100px 40px;
+    padding-bottom: 130px;
     flex: 1;         
-    width: min(1000px);
+    width: min(950px);
     margin: 0 auto;
 }
 h1 {
-    font-size: 60px;
+    font-size: 50px;
     color: #153488;
     text-align: center;
-    margin: 50px;
 }
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+p {
+    font-size: 15px;
+    color: #153488;
+    text-align: center;
 }
-input {
-    text-align: left;
-    width: 100%;
-    padding-left: 12px;
-    padding-right: 12px;
-}
-.form-criar-jogo {
+/* formulários */
+.formulario {
     display: flex;
     flex-direction: column;
     gap: 10px;
     width: min(90%, 600px);
     margin: 24px auto;
 }
-button {
-    background-color: #005fad;
+.formulario label {
+    font-weight: bold;
+    margin-top: 8px;
+}
+.formulario input:not([type="radio"]), .formulario textarea, .formulario select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #c7cde0;
+    border-radius: 8px;
+    font: inherit;
+    background-color: white;
+}
+.formulario small {
+    color: #666;
+    font-size: 13px;
+}
+.botao-cadastrar {
+    display: inline-block;
+    padding: 10px;
+    font-size: 15px;
+    margin-top: 12px;
+    background-color: #153488;
     color: white;
     border: none;
-    margin-top: 8px;
-    padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 8px;
+    text-decoration: none;
     cursor: pointer;
 }
-p {
-    font-size: 15px;
-    color: #153488;
-    margin-top: 8px;
-    text-align: center;
-}
+/* jogos */
 .jogos {
     display: flex;     
     flex-wrap: wrap;  
@@ -130,25 +142,10 @@ iframe {
 .card-jogo {
     position: relative;
 }
-
 .card-jogo img,
 .imagem-detalhe {
     max-width: 100%;
     object-fit: cover;
-}
-.detalhes-jogo {
-    display: flex;
-    background-color: #c1ebff;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 30px;
-    gap: 15px;
-}
-.detalhes-jogo p {
-    max-width: 900px;
-    background-color: #c1ebff;
-    text-align: center;
 }
 .area-jogo iframe {
     display: block;
@@ -158,30 +155,7 @@ iframe {
     border-radius: 12px;
     background-color: white;
 }
-.filtros {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
 
-}
-.filtros a {
-    background-color: #153488;
-    padding: 10px 20px;
-    color: #ffffff;    
-    border-radius: 8px;
-    text-decoration: none;
-    transition: 0.2s;
-}
-.filtros a:hover {
-    background-color: #005fad;
-    transform: scale(1.05);
-}
-.logofooter {
-    width: 5%;
-    padding-left: 10px;
-    background-color: #153488;
-}
 .botao-favorito {
     background: transparent;
     border: none;
@@ -256,59 +230,19 @@ iframe {
     justify-content: flex-end;
     margin-top: 8px;
 }
-.formulario-jogo {
-    width: 100%;
-    padding: 30px 15px;
-}
-.formulario-jogo h1 {
-    margin: 20px 0;
-}
+
 .acoes-inicio {
     width: 100%;
     display: flex;
     justify-content: center;
     margin: 0 0 25px;
 }
-.filtros {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin: 0 15px 25px;
-}
-.form-criar-jogo label {
-    font-weight: bold;
-    margin-top: 8px;
-}
-.form-criar-jogo input:not([type="radio"]), .form-criar-jogo textarea, .form-criar-jogo select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #c7cde0;
-    border-radius: 8px;
-    font: inherit;
-    background-color: white;
-}
-.form-criar-jogo small {
-    color: #666;
-    font-size: 13px;
-}
-.botao-cadastrar {
-    display: inline-block;
-    padding: 12px 18px;
-    background-color: #153488;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    text-decoration: none;
-    cursor: pointer;
-}
+/* rodapé */
 footer {
-    background-color: #153488;
+    background-color: #051b57;
     color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
-    padding: 11px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 20px;
     margin-top: auto;
 }

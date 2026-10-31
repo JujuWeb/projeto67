@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 {% block titulo %}Cadastrar jogo - 67GAMES{% endblock %}
+
 {% block conteudo %}
-<main class="formulario-jogo">
+
     <h1>Cadastrar jogo</h1>
-    <p>adicione um novo jogo ao catálogo do 67GAMES</p>
 
     {% if erro %}
         <p class="mensagem-erro">{{ erro }}</p>
     {% endif %}
 
-    <form method="POST" class="form-criar-jogo">
+    <form method="POST" class="formulario">
         <label for="nome">Nome do jogo</label>
         <input type="text" id="nome" name="nome" required>
 
@@ -52,5 +52,5 @@
             Cadastrar jogo
         </button>
     </form>
-</main>
+
 {% endblock %}

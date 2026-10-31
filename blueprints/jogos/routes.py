@@ -48,6 +48,8 @@ def criar_jogo():
         descricao = request.form.get("descricao", "").strip()
         ano = request.form.get("ano_lancamento", "").strip()
         imagem_url = request.form.get("imagem_url", "").strip()
+        if not imagem_url:
+            imagem_url = "/static/assets/67.png"
         url_jogo = request.form.get("url_jogo", "").strip()
         categoria_id = request.form.get("categoria_id", type=int)
         criador_id = request.form.get("criador_id", type=int)

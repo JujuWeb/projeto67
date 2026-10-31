@@ -1,14 +1,19 @@
 {% extends 'base.html' %}
+{% block titulo %} Cadastro - 67GAMES {% endblock %}
 
-    {% block titulo %} Cadastro - 67GAMES {% endblock %}
+{% block cabecalho %}
 
-    {% block conteudo %}
+{% endblock %}
 
-    <h1>Cadastro</h1>
+{% block conteudo %}
+
+    <h1>Cadastrar Usuário</h1>
+
     {% if erro %}
-        <p role="alert">{{ erro }}</p>
+        <p class="mensagem-erro">{{ erro }}</p>
     {% endif %}
-    <form action="{{ url_for('auth.cadastro') }}" method="post">
+
+    <form action="{{ url_for('auth.cadastro') }}" method="post" class="formulario">
         <label for="nome">Nome:</label>
         <input type="text" name="nome" required>
         
@@ -18,9 +23,10 @@
         <label for="senha">Senha:</label>
         <input type="password" name="senha" required>
         
-        <button type="submit">Cadastrar</button>
+        <button type="submit" class="botao-cadastrar">
+            Cadastrar
+        </button>
     </form>
-    
     <p>Já tem uma conta? <a href="{{ url_for('auth.login') }}">Faça login</a></p>
 
-    {% endblock %}
+{% endblock %}

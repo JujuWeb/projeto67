@@ -1,43 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/style.css">
    <title> {% block titulo %} 67GAMES {% endblock %} </title>
 </head>
+
 <body>
-
-    <header>
+    <header class="cabecalho">
+        <a href="{{ url_for('jogos.inicio') }}">
         <img src="/static/assets/LogoAnimada.gif" alt="Logo 67GAMES" class="gif">
-
-        <a href="">
-            <img src="static/assets/favoritos.png" alt="Jogos favoritos" class="icon">
         </a>
-
+        <a href="">
+            <img src="/static/assets/favoritos.png" alt="Jogos favoritos" class="icon">
+        </a>
         <a href="{{ url_for('jogos.criar_jogo') }}">
-            <img src="static/assets/cadastrarjogo.png" alt="Cadastrar Jogo" class="icon">
+            <img src="/static/assets/cadastrarjogo.png" alt="Cadastrar Jogo" class="icon">
         </a>
-
         <a href="">
-            <img src="static/assets/perfil.png" alt="Perfil" class="icon">
+            <img src="/static/assets/perfil.png" alt="Perfil" class="icon">
         </a>
-        
         <a href="{{ url_for('auth.logout') }}">
-            <img src="static/assets/sair.png" alt="Sair" class="icon">
+            <img src="/static/assets/sair.png" alt="Sair" class="icon">
         </a>
     </header>
 
+    {% block cabecalho %}
     <nav>
-
-    <div class="filtros">
-        <a href="{{ url_for('jogos.inicio') }}">Todos</a>
-
         {% for categoria in categorias %}
-            <a href="{{ url_for('jogos.inicio', categoria=categoria.id) }}">{{ categoria.nome }}</a>
+            <a href="{{ url_for('jogos.inicio', categoria=categoria.id) }}" class="filtros">{{ categoria.nome }}</a>
+            <a href="{{ url_for('jogos.inicio') }}" class="filtros">Todos</a>             
         {% endfor %}
-    </div>
-    </nav>
+    </nav>{% endblock %}
 
     <main>
         <div class="bloco">
@@ -48,8 +44,9 @@
         {% endblock %}
         </div>
     </main>
+
     <footer>
-         &copy; COPYRIGHT 2026 - 67GAMES. TODOS OS DIREITOS RESERVADOS. <img src="/static/assets/67.png" alt="67GAMES" class="logofooter">
+        &copy; COPYRIGHT 2026 - 67GAMES. TODOS OS DIREITOS RESERVADOS.
     </footer>
 </body>
 </html>
