@@ -11,19 +11,16 @@
         </div>
 
         <p class="aviso-jogo">
-            o jogo não carregou?
-            <a href="{{ jogo.url_jogo }}" target="_blank" rel="noopener noreferrer">abra em outra aba</a>
+            O jogo não carregou?
+            <a href="{{ jogo.url_jogo }}" target="_blank" rel="noopener noreferrer">Entre em outra aba!</a>
         </p>
     {% else %}
-        <p class="aviso-jogo">este jogo ainda não possui um endereço para jogar</p>
+        <p class="aviso-jogo">Este jogo ainda não possui um endereço.</p>
     {% endif %}
-
-        <div class="informacoes-jogo">
-        <p><strong>Descrição:</strong> {{ jogo.descricao or 'Sem descrição disponível.' }}</p>
-        <p><strong>Ano de lançamento:</strong> {{ jogo.ano_lancamento or 'Desconhecido' }}</p>
-        <p><strong>Criador:</strong> {{ jogo.criador.nome }}</p>
-        <p><strong>Categoria:</strong> {{ jogo.categoria.nome }}</p>
-    </div>
-    <a href="{{ url_for('jogos.inicio') }}" class="botao-voltar">Voltar ao catálogo</a>
+ 
+        <p class="informacoes-jogo"><strong>Descrição:</strong> {{ jogo.descricao or 'Sem descrição disponível.' }}</p>    
+        <p class="informacoes-jogo"><strong>Ano de lançamento:</strong> {{ jogo.ano_lancamento or 'Desconhecido' }}</p>
+        <p class="informacoes-jogo"><strong>Criador:</strong> {{ jogo.criador.nome }}</p>
+        <p class="informacoes-jogo"><strong>Categoria:</strong> {{ jogo.categoria.nome }}</p>
 
 {% endblock %}

@@ -58,7 +58,7 @@ main {
 }
 .bloco {
     background-color: #e8f8ff;
-    padding: 100px 40px;
+    padding: 100px 60px;
     padding-bottom: 130px;
     flex: 1;         
     width: min(950px);
@@ -68,6 +68,7 @@ h1 {
     font-size: 50px;
     color: #153488;
     text-align: center;
+    margin-bottom: 20px;
 }
 p {
     font-size: 15px;
@@ -97,6 +98,38 @@ p {
 .formulario small {
     color: #666;
     font-size: 13px;
+}
+.opcoes-categoria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 8px 0 16px;
+}
+.opcao-categoria {
+    cursor: pointer;
+}
+.opcao-categoria input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.opcao-categoria span {
+    display: inline-block;
+    padding: 10px 16px;
+    border: 2px solid #c7cde0;
+    border-radius: 20px;
+    color: #153488;
+    background: white;
+    transition: 0.2s;
+}
+.opcao-categoria input:checked + span {
+    background: #153488;
+    border-color: #153488;
+    color: white;
+}
+.opcao-categoria input:focus-visible + span {
+    outline: 2px solid #5275d9;
+    outline-offset: 3px;
 }
 .botao-cadastrar {
     display: inline-block;
@@ -137,7 +170,13 @@ iframe {
     height: 600px;
     border: none;
     display: block;
-    margin: 30px auto;
+    margin: 10px auto;
+}
+.aviso-jogo {
+    text-align: center;
+    font-size: 15px;
+    color: #e04464;
+    margin-bottom: 40px;
 }
 .card-jogo {
     position: relative;
@@ -171,38 +210,6 @@ iframe {
 .botao-favorito.favoritado {
     color: #e04464;
 }
-.opcoes-categoria {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 8px 0 16px;
-}
-.opcao-categoria {
-    cursor: pointer;
-}
-.opcao-categoria input {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-}
-.opcao-categoria span {
-    display: inline-block;
-    padding: 10px 16px;
-    border: 2px solid #c7cde0;
-    border-radius: 20px;
-    color: #153488;
-    background: white;
-    transition: 0.2s;
-}
-.opcao-categoria input:checked + span {
-    background: #153488;
-    border-color: #153488;
-    color: white;
-}
-.opcao-categoria input:focus-visible + span {
-    outline: 2px solid #5275d9;
-    outline-offset: 3px;
-}
 .card-jogo {
     position: relative;
     width: 250px;
@@ -230,12 +237,33 @@ iframe {
     justify-content: flex-end;
     margin-top: 8px;
 }
-
 .acoes-inicio {
     width: 100%;
     display: flex;
     justify-content: center;
     margin: 0 0 25px;
+}
+.informacoes-jogo {
+    text-align: left;
+    font-size: 17px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 5px;
+}
+.informacoes-jogo {
+    text-align: left;
+    font-size: 17px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 10px;
+}
+info-menores {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+strong {
+    color: #153488;
 }
 /* rodapé */
 footer {
