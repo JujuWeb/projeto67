@@ -1,9 +1,12 @@
 {% extends "base.html" %}
-{% block titulo %}Cadastrar jogo - 67GAMES{% endblock %}
+{% block titulo %}{% if jogo %}Editar jogo{% else %}Cadastrar jogo{% endif %} - 67GAMES{% endblock %}
 
 {% block conteudo %}
 
-    <h1>Cadastrar jogo</h1>
+    {% set categoria_selecionada = request.form.get('categoria_id', jogo.categoria_id if jogo else '')|string %}
+    {% set criador_selecionado = request.form.get('criador_id', jogo.criador_id if jogo else '')|string %}
+
+    <h1>{% if jogo %}Editar jogo{% else %}Cadastrar jogo{% endif %}</h1>
 
     {% if erro %}
         <p class="mensagem-erro">{{ erro }}</p>
@@ -11,19 +14,19 @@
 
     <form method="POST" class="formulario">
         <label for="nome">Nome do jogo</label>
-        <input type="text" id="nome" name="nome" required>
+        <input type="text" id="nome" name="nome" value="{{ request.form.get('nome', jogo.nome if jogo else '') }}" required>
 
         <label for="descricao">Descrição</label>
-        <textarea id="descricao" name="descricao" rows="4"></textarea>
+        <textarea id="descricao" name="descricao" rows="4">{{ request.form.get('descricao', jogo.descricao if jogo else '') }}</textarea>
 
         <label for="ano_lancamento">Ano de lançamento</label>
-        <input type="number" id="ano_lancamento" name="ano_lancamento" min="1">
+        <input type="number" id="ano_lancamento" name="ano_lancamento" min="1" value="{{ request.form.get('ano_lancamento', jogo.ano_lancamento if jogo and jogo.ano_lancamento else '') }}">
 
         <label>Categoria *</label>
             <div class="opcoes-categoria">
                 {% for categoria in categorias %}
                     <label class="opcao-categoria">
-                        <input type="radio" name="categoria_id" value="{{ categoria.id }}" required>
+                        <input type="radio" name="categoria_id" value="{{ categoria.id }}" {% if categoria.id|string == categoria_selecionada %}checked{% endif %} required>
                         <span>{{ categoria.nome }}</span>
                     </label>
                 {% endfor %}
@@ -31,25 +34,25 @@
 
             <label for="criador_id">Criador existente</label>
             <select id="criador_id" name="criador_id">
-                <option value="">Cadastrar um novo criador</option>
+                <option value="" {% if not criador_selecionado %}selected{% endif %}>Cadastrar um novo criador</option>
                 {% for criador in criadores %}
-                    <option value="{{ criador.id }}">{{ criador.nome }}</option>
+                    <option value="{{ criador.id }}" {% if criador.id|string == criador_selecionado %}selected{% endif %}>{{ criador.nome }}</option>
                 {% endfor %}
             </select>
 
             <label for="novo_criador">Ou nome do novo criador</label>
-            <input type="text" id="novo_criador" name="novo_criador" placeholder="digite o nome do criador">
+            <input type="text" id="novo_criador" name="novo_criador" value="{{ request.form.get('novo_criador', '') }}" placeholder="digite o nome do criador">
 
         <label for="imagem_url">URL da imagem</label>
-        <input type="url" id="imagem_url" name="imagem_url" placeholder="https://exemplo.com/imagem.jpg">
+        <input type="url" id="imagem_url" name="imagem_url" value="{{ request.form.get('imagem_url', jogo.imagem_url if jogo else '') }}" placeholder="https://exemplo.com/imagem.jpg">
         <small>opcional, se a imagem não carregar, usaremos a padrão</small>
 
         <label for="url_jogo">URL para jogar</label>
-        <input type="url" id="url_jogo" name="url_jogo" placeholder="https://exemplo.com/jogo">
+        <input type="url" id="url_jogo" name="url_jogo" value="{{ request.form.get('url_jogo', jogo.url_jogo if jogo else '') }}" placeholder="https://exemplo.com/jogo">
         <small>opcional, se não informar, será exibido uma url padrão</small>
 
         <button type="submit" class="botao-cadastrar">
-            Cadastrar jogo
+            {% if jogo %}Salvar alterações{% else %}Cadastrar jogo{% endif %}
         </button>
     </form>
 

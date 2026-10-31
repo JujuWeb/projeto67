@@ -143,6 +143,27 @@ p {
     text-decoration: none;
     cursor: pointer;
 }
+.acoes-jogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 24px;
+}
+.acoes-jogo form {
+    margin: 0;
+}
+.botao-excluir {
+    display: inline-block;
+    padding: 10px;
+    font-size: 15px;
+    margin-top: 12px;
+    background-color: #b4233b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
 /* jogos */
 .jogos {
     display: flex;     
